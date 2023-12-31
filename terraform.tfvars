@@ -1,14 +1,14 @@
-project_id = "my-project"
-region     = "us-west2"
+project_id = "sandbox-amarie"
+region     = "europe-west3"
 
 # cloud build
-github_repo_owner         = "Neutrollized"
+github_repo_owner         = "Abdulaziz-MARIE"
 github_repo_name          = "hashicorp-vault-with-cloud-run"
-cloudrun_service_name     = "myvault"
+cloudrun_service_name     = "vault"
 trigger_approval_required = false
 
 # vault
-cloudrun_region     = "us-west2"
+cloudrun_region     = "europe-west4"
 cloudrun_ingress    = "internal"
 storage_class       = "STANDARD"
 vault_server_config = "./cloud-run/vault-server.hcl"
