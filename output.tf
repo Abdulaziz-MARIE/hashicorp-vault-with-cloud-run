@@ -7,7 +7,7 @@ output "bucket_name" {
 }
 
 output "cloud_kms_keyring" {
-  value = google_kms_key_ring.vault.name
+  value = data.google_kms_key_ring.vault.name
 }
 
 output "service_account_email" {
