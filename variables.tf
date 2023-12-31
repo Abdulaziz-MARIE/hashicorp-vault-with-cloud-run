@@ -9,7 +9,7 @@ variable "project_id" {
 variable "region" {
   description = "Region to deploy GCP resources"
   type        = string
-  default     = "us-central1"
+  default     = "europe-west3"
 }
 
 
@@ -41,7 +41,7 @@ variable "storage_class" {
 variable "location" {
   description = "Multi-region name, options are: ASIA, EU, US"
   type        = string
-  default     = "US"
+  default     = "EU"
 }
 
 variable "force_destroy" {
@@ -85,7 +85,7 @@ variable "cloudrun_ingress" {
 variable "cloudrun_region" {
   description = "Region where Cloud Run is deployed.  This may be different from the region due to the some feastures (i.e. custom domains) that are still in beta and not support everywhere yet."
   type        = string
-  default     = "us-east4"
+  default     = "europe-west4"
 }
 
 variable "cloudrun_exec_env" {
