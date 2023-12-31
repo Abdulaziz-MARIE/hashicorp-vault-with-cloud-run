@@ -33,14 +33,14 @@ resource "google_storage_bucket" "vault_backend" {
 #--------------------
 # Cloud KMS
 #--------------------
-resource "google_kms_key_ring" "vault" {
-  name     = "vault-server-${random_id.name_suffix.hex}"
+data "google_kms_key_ring" "vault" {
+  name     = "vault_keyring"
   location = "global"
 }
 
 resource "google_kms_crypto_key" "auto_unseal" {
   name     = "auto_unseal"
-  key_ring = google_kms_key_ring.vault.id
+  key_ring = data.google_kms_key_ring.vault.id
   purpose  = "ENCRYPT_DECRYPT"
 }
 
@@ -68,7 +68,7 @@ resource "google_secret_manager_secret_version" "vault_server_config" {
 resource "google_cloudbuild_trigger" "docker_build_trigger" {
   name        = "hashicorp-vault-cloudrun-build-and-deploy"
   description = "Docker Build and Deploy - Terraform managed"
-
+  location = "europe-west3"
   filename = "cloudbuild.yaml"
 
   github {
@@ -83,7 +83,7 @@ resource "google_cloudbuild_trigger" "docker_build_trigger" {
     _GAR_REGION            = var.region
     _GAR_REPO_NAME         = var.gar_repo_name
     _GCS_BUCKET_NAME       = google_storage_bucket.vault_backend.name
-    _KMS_KEY_RING          = google_kms_key_ring.vault.name
+    _KMS_KEY_RING          = data.google_kms_key_ring.vault.name
     _REGION                = var.cloudrun_region
     _SERVICE_ACCOUNT_EMAIL = google_service_account.vault_sa.email
     _SERVICE_NAME          = var.cloudrun_service_name
