@@ -14,5 +14,5 @@ seal "gcpckms" {
 }
 
 storage "gcs" {
-  ha_enabled = "false"
+  ha_enabled = "true"
 }
