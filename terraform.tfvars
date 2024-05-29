@@ -8,7 +8,7 @@ cloudrun_service_name     = "vault"
 trigger_approval_required = false
 
 # vault
-cloudrun_region     = "europe-west4"
+cloudrun_region     = "europe-west3"
 cloudrun_ingress    = "all"
 storage_class       = "STANDARD"
 vault_server_config = "./cloud-run/vault-server.hcl"
