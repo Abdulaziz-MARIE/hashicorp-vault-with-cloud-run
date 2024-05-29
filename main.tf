@@ -43,7 +43,10 @@ resource "google_kms_crypto_key" "auto_unseal" {
   key_ring = data.google_kms_key_ring.vault.id
   purpose  = "ENCRYPT_DECRYPT"
 }
-
+import {
+  id = "projects/sandbox-amarie/locations/global/keyRings/vault_keyring/cryptoKeys/auto_unseal"
+  to = google_kms_crypto_key.auto_unseal
+}
 
 #---------------------------
 # Secret Manager
@@ -52,7 +55,7 @@ resource "google_secret_manager_secret" "vault_secret" {
   secret_id = "vault-server-config"
 
   replication {
-    automatic = true
+    auto {}
   }
 }
 
