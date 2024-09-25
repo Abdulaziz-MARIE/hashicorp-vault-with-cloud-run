@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+
+## [0.9.3] - 2024-06-12
+### Changed
+- Updated Vault version from `1.16.1` to `1.17.0`
+
+## [0.9.2] - 2024-04-06
+### Added
+- [Custom input validation rules](https://developer.hashicorp.com/terraform/language/values/variables#custom-validation-rules)
+- Added `description` to output values
+### Changed
+- Changed how environment variables are passed in `cloudbuild.yaml`'s deploy step
+- Updated Vault version from `1.15.6` to `1.16.1`
+
+## [0.9.1] - 2024-03-14
+### Changed
+- `google_secret_manager_secret`'s replication argument, `automatic` is being deprecated for `auto` instead
+- Updated Vault version from `1.15.5` to `1.15.6`
+
+## [0.9.0] - 2024-02-05
+### Changed
+- Added `--cpu-boost` for [faster cold starts](https://cloud.google.com/blog/products/serverless/announcing-startup-cpu-boost-for-cloud-run--cloud-functions)
+- Updated Vault version from `1.14.7` to `1.15.5`
+
 ## [0.8.3] - 2023-12-01
 ### Changed
 - Updated Vault version from `1.14.3` to `1.14.7`
