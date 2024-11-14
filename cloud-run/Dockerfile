@@ -18,5 +18,5 @@ RUN apk add --no-cache ca-certificates
 FROM scratch
 COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 COPY --from=builder /vault ${WORKDIR}/.
-
+EXPOSE 8200
 ENTRYPOINT ["/vault", "server", "-config", "/etc/vault/config.hcl"]
