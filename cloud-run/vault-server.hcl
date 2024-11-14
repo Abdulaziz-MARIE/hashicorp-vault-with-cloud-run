@@ -13,7 +13,6 @@ seal "gcpckms" {
   region     = "global"
 }
 
-
 storage "gcs" {
   ha_enabled = "false"
 }
