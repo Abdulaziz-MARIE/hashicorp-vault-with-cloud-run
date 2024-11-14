@@ -1,5 +1,5 @@
 project_id = "sandbox-amarie"
-region     = "europe-west9"
+region     = "europe-west3"
 
 # cloud build
 github_repo_owner         = "Abdulaziz-MARIE"
@@ -8,7 +8,7 @@ cloudrun_service_name     = "hashicorp-vault"
 trigger_approval_required = false
 
 # vault
-cloudrun_region     = "europe-west9"
+cloudrun_region     = "europe-west3"
 cloudrun_ingress    = "all"
 storage_class       = "STANDARD"
 vault_server_config = "./cloud-run/vault-server.hcl"
