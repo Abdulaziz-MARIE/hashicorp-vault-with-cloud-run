@@ -71,7 +71,7 @@ resource "google_secret_manager_secret_version" "vault_server_config" {
 resource "google_cloudbuild_trigger" "docker_build_trigger" {
   name        = "hashicorp-vault-cloudrun-build-and-deploy"
   description = "Docker Build and Deploy - Terraform managed"
-  location = "europe-west3"
+  location = "europe-west9"
   filename = "cloudbuild.yaml"
 
   github {

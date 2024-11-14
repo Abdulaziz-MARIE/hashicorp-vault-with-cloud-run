@@ -9,7 +9,7 @@ variable "project_id" {
 variable "region" {
   description = "Region to deploy GCP resources"
   type        = string
-  default     = "europe-west3"
+  default     = "europe-west9"
 }
 
 
@@ -100,7 +100,7 @@ variable "cloudrun_ingress" {
 variable "cloudrun_region" {
   description = "Region where Cloud Run is deployed.  This may be different from the region due to the some feastures (i.e. custom domains) that are still in beta and not support everywhere yet."
   type        = string
-  default     = "europe-west4"
+  default     = "europe-west9"
 }
 
 variable "cloudrun_exec_env" {

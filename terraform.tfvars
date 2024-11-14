@@ -1,10 +1,10 @@
 project_id = "sandbox-amarie"
-region     = "europe-west3"
+region     = "europe-west9"
 
 # cloud build
 github_repo_owner         = "Abdulaziz-MARIE"
 github_repo_name          = "hashicorp-vault-with-cloud-run"
-cloudrun_service_name     = "vault"
+cloudrun_service_name     = "hashicorp-vault"
 trigger_approval_required = false
 
 # vault
